@@ -1,0 +1,3 @@
+- Camera follows mouse when right click (fire 2)
+- Direction of Travel (Dot) follows mouse when no buttons are depressed.
+- Gear Deploy when left click (fire 1)
