@@ -2,14 +2,14 @@ using UnityEngine;
 
 public class followCamera : MonoBehaviour
 {
-	public GameObject Plane;
-	public GameObject Camera;
-	public Vector3 Origin;
+	GameObject Plane;
+	GameObject Camera;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-		Origin = new Vector3(0, 0, 0);
+		Plane = GameObject.Find("Bean Plane");
+		Camera = GameObject.Find("Main Camera");
     }
 
     // Update is called once per frame
