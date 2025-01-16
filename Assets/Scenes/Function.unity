@@ -252,6 +252,7 @@ GameObject:
   - component: {fileID: 961739752}
   - component: {fileID: 961739751}
   - component: {fileID: 961739750}
+  - component: {fileID: 961739754}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -377,6 +378,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &961739754
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 961739749}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29f90990ee7f56745a6d672697dc7e02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1189960885
 GameObject:
   m_ObjectHideFlags: 0
@@ -390,8 +403,7 @@ GameObject:
   - component: {fileID: 1189960887}
   - component: {fileID: 1189960886}
   - component: {fileID: 1189960890}
-  - component: {fileID: 1189960892}
-  - component: {fileID: 1189960893}
+  - component: {fileID: 1189960891}
   m_Layer: 0
   m_Name: Bean Plane
   m_TagString: Untagged
@@ -512,12 +524,12 @@ Rigidbody:
     m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &1189960892
+--- !u!114 &1189960891
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -526,27 +538,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1189960885}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fbe625c7db5810441bed57c3535747ca, type: 3}
+  m_Script: {fileID: 11500000, guid: cafaf7e4012883046b1b583b969273df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Plane: {fileID: 1189960885}
-  Camera: {fileID: 961739749}
-  Origin: {x: 0, y: 0, z: 0}
---- !u!114 &1189960893
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1189960885}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 29f90990ee7f56745a6d672697dc7e02, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  FOV_x: 120
-  rotSpeed: 10
-  Camera: {fileID: 961739749}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

@@ -1,7 +1,11 @@
 using UnityEngine;
 
-public class planeRotation : MonoBehaviour
+public class cameraRotation : MonoBehaviour
 {
+	/* FOV_x is a dummy variable. Eventually it will call the FOV class of
+	 * Camera, to get a player set FOV value defined within a special
+	 * settings/ui scene
+	 */
 	float FOV_x = 120;
 	int rotSpeedModifier = 1000;
 	float rotateCameraAbsolute_x = 0;
@@ -32,7 +36,7 @@ public class planeRotation : MonoBehaviour
 		float oldCameraRotation_y = Camera.transform.rotation.z;
 		float newCameraRotation_y = oldCameraRotation_y + rotateY;
 		float oldCameraRotation_z = Camera.transform.rotation.x;
-		rotateCameraAbsolute_x = rotateCameraAbsolute_x + newCameraRotation_x;
+		rotateCameraAbsolute_x = rotateCameraAbsolute_x + newCameraRotation_x * -1;
 		rotateCameraAbsolute_y = rotateCameraAbsolute_y + newCameraRotation_y;
 		Camera.transform.rotation =  Quaternion.Euler(rotateCameraAbsolute_y, rotateCameraAbsolute_x, oldCameraRotation_z);
     }
