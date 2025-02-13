@@ -7,7 +7,9 @@ public class cameraRotation : MonoBehaviour
 	 * settings/ui scene
 	 */
 	float FOV_x = 120;
-	int rotSpeedModifier = 1000;
+	float rotateAngleModifier = 2.57f;
+	int rotSpeedModifier_x = 2000;
+	int rotSpeedModifier_y = 1000;
 	float rotateCameraAbsolute_x = 0;
 	float rotateCameraAbsolute_y = 0;
 	GameObject Camera;
@@ -25,19 +27,26 @@ public class cameraRotation : MonoBehaviour
 
     void FixedUpdate()
     {
+		// Variables
 		float screenCenter_x = Screen.width/2;
 		float screenCenter_y = Screen.height/2;
+
 		float mousePosition_x = Input.mousePosition.x;
 		float mousePosition_y = Input.mousePosition.y;
-		float rotateX = ((screenCenter_x - mousePosition_x)/pixelsPerDegree_x)/rotSpeedModifier;
-		float rotateY = ((screenCenter_y - mousePosition_y)/pixelsPerDegree_y)/rotSpeedModifier;
+
+		float rotateX = ((screenCenter_x - mousePosition_x)/pixelsPerDegree_x)/rotSpeedModifier_x;
+		float rotateY = ((screenCenter_y - mousePosition_y)/pixelsPerDegree_y)/rotSpeedModifier_y;
+
 		float oldCameraRotation_x = Camera.transform.rotation.y;
 		float newCameraRotation_x = oldCameraRotation_x + rotateX;
 		float oldCameraRotation_y = Camera.transform.rotation.z;
 		float newCameraRotation_y = oldCameraRotation_y + rotateY;
-		float oldCameraRotation_z = Camera.transform.rotation.x;
+
+		float rotateCameraAbsolute_z = (rotateX/rotateAngleModifier)*(rotSpeedModifier_x/100);
 		rotateCameraAbsolute_x = rotateCameraAbsolute_x + newCameraRotation_x * -1;
 		rotateCameraAbsolute_y = rotateCameraAbsolute_y + newCameraRotation_y;
-		Camera.transform.rotation =  Quaternion.Euler(rotateCameraAbsolute_y, rotateCameraAbsolute_x, oldCameraRotation_z);
+
+		// Functionality
+		Camera.transform.rotation =  Quaternion.Euler(rotateCameraAbsolute_y, rotateCameraAbsolute_x, rotateCameraAbsolute_z);
     }
 }
