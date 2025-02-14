@@ -33,7 +33,9 @@ public class cameraRotation : MonoBehaviour
 
 		float mousePosition_x = Input.mousePosition.x;
 		float mousePosition_y = Input.mousePosition.y;
-
+		if (mousePosition_y <= 10) {
+			mousePosition_y = 0;
+		}
 		float rotateX = ((screenCenter_x - mousePosition_x)/pixelsPerDegree_x)/rotSpeedModifier_x;
 		float rotateY = ((screenCenter_y - mousePosition_y)/pixelsPerDegree_y)/rotSpeedModifier_y;
 
