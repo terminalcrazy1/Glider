@@ -46,6 +46,13 @@ public class cameraRotation : MonoBehaviour
 		rotateCameraAbsolute_x = rotateCameraAbsolute_x + newCameraRotation_x * -1;
 		rotateCameraAbsolute_y = rotateCameraAbsolute_y + newCameraRotation_y;
 
+		Debug.Log(rotateCameraAbsolute_y);
+		if (rotateCameraAbsolute_y <= -35) {
+			rotateCameraAbsolute_y = -35;
+			// Commented out because speed is not yet an existing parameter
+			// currentSpeed -= 10;
+		}
+
 		// Functionality
 		Camera.transform.rotation =  Quaternion.Euler(rotateCameraAbsolute_y, rotateCameraAbsolute_x, rotateCameraAbsolute_z);
     }
