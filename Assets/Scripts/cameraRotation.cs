@@ -49,7 +49,7 @@ public class cameraRotation : MonoBehaviour
 		Debug.Log(rotateCameraAbsolute_y);
 		if (rotateCameraAbsolute_y <= -35) {
 			rotateCameraAbsolute_y = -35;
-			// Commented out because speed is not yet an existing parameter
+			// Commented out because lift is not yet an existing parameter
 			// currentLift = 0
 		} else if (rotateCameraAbsolute_y >= 90) {
 			rotateCameraAbsolute_y = 90;
