@@ -50,9 +50,12 @@ public class cameraRotation : MonoBehaviour
 		if (rotateCameraAbsolute_y <= -35) {
 			rotateCameraAbsolute_y = -35;
 			// Commented out because speed is not yet an existing parameter
-			// currentSpeed -= 10;
+			// currentLift = 0
+		} else if (rotateCameraAbsolute_y >= 90) {
+			rotateCameraAbsolute_y = 90;
+			// Commented out for same reason as above
+			// currentLift = 0
 		}
-
 		// Functionality
 		Camera.transform.rotation =  Quaternion.Euler(rotateCameraAbsolute_y, rotateCameraAbsolute_x, rotateCameraAbsolute_z);
     }
