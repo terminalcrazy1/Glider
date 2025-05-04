@@ -8,7 +8,7 @@ public class cameraRotation : MonoBehaviour
 	 */
 	float FOV_x = 120;
 	float rotateAngleModifier = 2.57f;
-	int rotSpeedModifier_x = 2000;
+	int rotSpeedModifier_x = 8000;
 	int rotSpeedModifier_y = 1000;
 	float rotateCameraAbsolute_x = 0;
 	float rotateCameraAbsolute_y = 0;
@@ -33,7 +33,7 @@ public class cameraRotation : MonoBehaviour
 
 		float mousePosition_x = Input.mousePosition.x;
 		float mousePosition_y = Input.mousePosition.y;
-		if (mousePosition_y <= 10) {
+		if (mousePosition_y <= 100) {
 			mousePosition_y = 0;
 		}
 		float rotateX = ((screenCenter_x - mousePosition_x)/pixelsPerDegree_x)/rotSpeedModifier_x;
@@ -48,7 +48,6 @@ public class cameraRotation : MonoBehaviour
 		rotateCameraAbsolute_x = rotateCameraAbsolute_x + newCameraRotation_x * -1;
 		rotateCameraAbsolute_y = rotateCameraAbsolute_y + newCameraRotation_y;
 
-		Debug.Log(rotateCameraAbsolute_y);
 		if (rotateCameraAbsolute_y <= -35) {
 			rotateCameraAbsolute_y = -35;
 			// Commented out because lift is not yet an existing parameter
